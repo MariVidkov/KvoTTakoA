@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "EmailWatcher",
+    "description": "KvoTTakoA",
+    "version": "0.1.0",
+    "icons": {
+        "16": "/images/policeman.png",
+        "48": "/images/policeman.png",
+        "128": "/images/policeman.png"
+    },
+    "page_action": {
+        "default_icon":{
+            "16": "/images/policeman.png",
+            "48": "/images/policeman.png",
+            "128": "/images/policeman.png"
+        }
+    }
+}
