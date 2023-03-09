@@ -1,18 +1,22 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "EmailWatcher",
     "description": "KvoTTakoA",
     "version": "0.1.0",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://*.gmail.com/*"],
     "icons": {
         "16": "/images/policeman.png",
         "48": "/images/policeman.png",
         "128": "/images/policeman.png"
     },
-    "page_action": {
-        "default_icon":{
-            "16": "/images/policeman.png",
-            "48": "/images/policeman.png",
-            "128": "/images/policeman.png"
+    "content_scripts": [
+        {
+            "matches": ["https://*.gmail.com/*"],
+            "js": ["contentScript.js"]
         }
+    ],
+    "action": {
+        "default_popup": "popup.html"
     }
 }
