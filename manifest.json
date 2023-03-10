@@ -4,6 +4,7 @@
     "description": "KvoTTakoA",
     "version": "0.1.0",
     "permissions": ["storage", "tabs"],
+
     "host_permissions": ["https://*.gmail.com/*"],
     "icons": {
         "16": "/images/policeman.png",
