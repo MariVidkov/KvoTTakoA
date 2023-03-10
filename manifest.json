@@ -2,22 +2,33 @@
     "manifest_version": 3,
     "name": "EmailWatcher",
     "description": "KvoTTakoA",
-    "version": "0.1.0",
-    "permissions": ["storage", "tabs"],
-
-    "host_permissions": ["https://*.gmail.com/*"],
+    "version": "1.0",
+    "permissions": ["identity"],
     "icons": {
-        "16": "/images/policeman.png",
-        "48": "/images/policeman.png",
-        "128": "/images/policeman.png"
+        "16": "/images/logo.png",
+        "48": "/images/logo.png",
+        "128": "/images/logo.png"
     },
     "content_scripts": [
         {
-            "matches": ["https://*.gmail.com/*"],
-            "js": ["contentScript.js"]
+            "js": ["contentScript.js"],
+            "matches": ["<all_urls>"]
         }
     ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline';"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "oauth2":{
+        "client_id": "476671900409-1jj1r75b0bonbcudb0plc2s9kl5cqovf.apps.googleusercontent.com",
+         "scopes": ["https://mail.google.com/"]
+
+    },
     "action": {
         "default_popup": "popup.html"
     }
+
 }
