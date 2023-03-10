@@ -7,9 +7,9 @@
 
     "host_permissions": ["https://*.gmail.com/*"],
     "icons": {
-        "16": "/images/policeman.png",
-        "48": "/images/policeman.png",
-        "128": "/images/policeman.png"
+        "16": "/images/logo-phishing.png",
+        "48": "/images/logo-phishing.png",
+        "128": "/images/logo-phishing.png"
     },
     "content_scripts": [
         {
