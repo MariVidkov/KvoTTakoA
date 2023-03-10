@@ -1,7 +1,7 @@
 gapi.load('client:auth2', function() {
   gapi.client.init({
-    apiKey: 'AIzaSyDlKeHtJ4rj-SGbkCkgpAhAvrHsBgWg6tI',
-    clientId: '111556460698382722340',
+    apiKey: 'api',
+    clientId: 'id',
     discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest'],
     scope: 'https://www.googleapis.com/auth/gmail.readonly'
   }).then(function() {
