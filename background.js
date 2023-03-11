@@ -15,12 +15,30 @@ const fetchMessage = async (token, id) => {
         }
     })
     const responseJson = await response.json()
+    const snippet = responseJson.snippet;
+        if (containsURL(snippet)) {
+            checkURLSecurity(snippet);
+        }
     return responseJson
+}
+const containsURL = (text) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return urlRegex.test(text);
+}
+
+const checkURLSecurity = (text) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const match = urlRegex.exec(text);
+    if (match && match[0].startsWith('http://')) {
+        console.log("URL in message snippet uses insecure http protocol:", match[0]);
+    }else{
+        console.log("its safe")
+    }
 }
 
 const init = async (token) => {
     const messages = await fetchMessages(token)
-    const message = await fetchMessage(token, messages[1].id)
+    const message = await fetchMessage(token, messages[0].id)
     console.log(message)
 }
 
